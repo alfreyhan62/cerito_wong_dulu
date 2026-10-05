@@ -1,0 +1,2 @@
+import { Search } from 'lucide-react'
+export default function SearchBar({ value, onChange }) { return <label className="relative block"><Search size={16} className="absolute left-3.5 top-3 text-stone-500" /><input value={value} onChange={(event) => onChange(event.target.value)} className="w-full rounded-lg border border-[#d0c2af] bg-[#ede5db] py-2.5 pl-10 pr-4 text-sm text-stone-900 outline-none focus:border-[#9a3412]" placeholder="Cari cerita..." type="search" /></label> }

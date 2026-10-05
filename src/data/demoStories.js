@@ -1,0 +1,9 @@
+export const stories = [
+  { id: 'putri-kembang-dadar', title: 'Putri Kembang Dadar', category: 'Legenda', region: 'Palembang', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB4kaxm3_moDe0XcJlLgspomm3OWUjkcmSLBEM23_bU8Lz10xqdTlBTzeeBHVwLHL83ikLNc3zM4buLalHx86wjvF5RCQwQbvjEZXqBI3ZAd4M2D-yJjWiWZcZ4DeKzDe2eJmbxxsSJOMnjICnNqRP-W-igxlQtmUer0wTncOmr9Ru5eU2c6Vz8r00sKGaPH4abr6sLpbl3BF_FSDpE2lWOaj6pAUiah1VUgiMHGi64UfAfAEscZvbP' },
+  { id: 'tanjung-sakti', title: 'Tanjung Sakti', category: 'Asal Usul', region: 'Lahat', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBg02Fpsq5J1h-besynoe8YZpwlIBd3nC-qQ5cjDKnwNYlgSBiUdN6_D-GZewTuRNNjsb3lDwTvqjFjy0Pmn47yrSSqxmLQip1lVjkjF80XQxxm391NIpYzk_SJi-9v6g9GxirlW1xugMqcPr5EPJtsfR8MqqZAcgSJ4b8pUdL5ewwmvsfgPvC1lYol6Mx348NCGreWLmc9Htm7gKCaC9ESxJ3yzv0EOTILF26CkUkleeV6ERrsPRdH' },
+  { id: 'si-pahit-lidah', title: 'Si Pahit Lidah', category: 'Legenda', region: 'Pagar Alam', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBsE7t01ZesVsRNkM8_P7z1F-ETDnu2kfr5ktCe342qWyG9W5XXoh_GYmc_7laDXvhD9peQz90sW7HtKTUHS6X7Bv-dcUI-Sx334uceslp8tBvp8uIuv-zBuq82mw1WCl58k8SvJKcvrTsAQeDUBasVOaQSeQ4Mn8ohhNsXoXVDltQ3iCTQyGDMjk8089TON0uMmWxX_zHf2p6yd-2QNF8sL4k4gDMZqy5Zc1riczntFb2dRFTrTSzA' },
+  { id: 'kesultanan-palembang', title: 'Kesultanan Palembang', category: 'Kerajaan', region: 'Palembang', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBFoUip35zer0QVSHlR9WunsiRIpx47RhYuzN-wOusEuVxy4Qkby-M3fQgBdl7FBlmQolDjIi9cUoKYpjuIqhWT6-ALMmY-ghF2bkPBenmhH3gtslrXDRkKBo6p7KEHokC6fD8h4seatmjhnC5MlPzwVCZWVYa_FBl0zXSY47gccFkOcwawW3srWP7vJorp29I6avlIvdIK6A57VgfTdXykQjZjnjZtRnr_4Mjtz2nGBzslV8s2KBii' },
+]
+
+export const regions = ['Palembang', 'Lahat', 'Ogan Ilir', 'Muara Enim', 'Pagar Alam', 'OKU', 'OKI', 'Musi Banyuasin']
+export const categories = ['Legenda', 'Kerajaan', 'Asal Usul', 'Misteri', 'Petualangan', 'Kearifan Lokal']

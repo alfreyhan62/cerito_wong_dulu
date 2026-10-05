@@ -1,0 +1,620 @@
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Cerito Wong Dulu - Cerito Lame, Warisan Kite</title>
+<!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#FDF8F3',
+              100: '#F9EFE6',
+              200: '#F1DCB9',
+              300: '#E4C28D',
+              400: '#C88D4D',
+              500: '#9E5622',
+              600: '#843E16',
+              700: '#6C2F0F',
+              800: '#53230C',
+              900: '#3D1807',
+            },
+            parchment: '#FAF6F0',
+            terracotta: '#8C3D19',
+            darkamber: '#632B0F',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-decorations">
+    /* Subtle paper texture aesthetic and smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #FAF6F0;
+      color: #2D241E;
+    }
+    .hero-gradient {
+      background: linear-gradient(180deg, rgba(61, 24, 7, 0.45) 0%, rgba(61, 24, 7, 0.85) 100%);
+    }
+    .map-bg-pattern {
+      background-color: #1A3026;
+      background-image: radial-gradient(#2E5140 1.5px, transparent 1.5px), radial-gradient(#2E5140 1.5px, #1A3026 1.5px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-[#2D241E] bg-[#F5EFE4]">
+<!-- BEGIN: MainHeader -->
+<header class="sticky top-0 z-50 backdrop-blur-md border-b border-[#E8DFD1] transition-all bg-[#FAF1E3]" data-purpose="site-header">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Brand Logo -->
+<a class="flex items-center gap-3 group" data-purpose="brand-logo" href="#">
+<div class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-700 to-amber-900 flex items-center justify-center text-amber-200 shadow-md group-hover:scale-105 transition-transform">
+<!-- Traditional Tanjak / Limas Motif Symbol -->
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 2L2 9L5 13L12 8L19 13L22 9L12 2Z"></path>
+<path d="M4 14V20C4 20.5523 4.44772 21 5 21H19C19.5523 21 20 20.5523 20 20V14L12 18.5L4 14Z" opacity="0.8"></path>
+<circle cx="12" cy="13" fill="#FAF6F0" r="2"></circle>
+</svg>
+</div>
+<div>
+<span class="font-serif font-bold text-xl tracking-tight text-stone-900 block leading-tight">Cerito Wong Dulu</span>
+<span class="text-xs text-amber-800 font-medium tracking-wide">Cerito Lame, Warisan Kite</span>
+</div>
+</a>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-8 font-medium text-sm text-stone-700" data-purpose="main-nav">
+<a aria-current="page" class="text-[#9A3412] font-semibold border-b-2 border-[#9A3412] pb-0.5" href="#">Beranda</a>
+<a class="hover:text-amber-800 transition-colors" href="#">Jelajahi Cerito</a>
+<a class="hover:text-amber-800 transition-colors" href="#">Peta Cerito</a>
+<a class="hover:text-amber-800 transition-colors" href="#">Tanya Cerito</a>
+<a class="hover:text-amber-800 transition-colors" href="#">Tentang</a>
+</nav>
+<!-- Right Action CTAs -->
+<div class="flex items-center gap-3" data-purpose="header-actions">
+<!-- Search Button -->
+<button aria-label="Cari Cerito" class="p-2.5 rounded-full hover:bg-stone-200/60 text-stone-700 transition" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="11" cy="11" r="8"></circle>
+<path d="m21 21-4.3-4.3"></path>
+</svg>
+</button>
+<!-- AI Assistant CTA -->
+<a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#9A3412] hover:bg-[#781F00] text-amber-100 hover:text-white hover:shadow-md transition duration-200 text-sm font-medium" href="#tanya-cerito">
+<svg class="w-4 h-4 text-amber-300" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 2L14.4 7.6L20 8.4L16 12.6L17.2 18.2L12 15.3L6.8 18.2L8 12.6L4 8.4L9.6 7.6L12 2Z"></path>
+</svg>
+<span class="">Tanya Cerito</span>
+</a>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<main>
+<!-- BEGIN: HeroSection -->
+<section class="relative min-h-[580px] lg:h-[620px] flex items-center justify-center overflow-hidden" data-purpose="hero-banner">
+<!-- Background Image with Traditional Palembang / South Sumatra Sunset Atmosphere -->
+<img alt="Arsitektur Tradisional dan Nuansa Senja Sumatera Selatan" class="absolute inset-0 w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxZlINBc6xzMJmhMfnYP5lzLQpWAq5qbIGdOQ5MUp-OtLnir0-Xj8y7l2F4MleHWJGL5waOWc0pI8erDVKzzdlmBVqWcMcBXu1vbbWvjY7AhBSBQprCEBgAPCli3nsk4hGEqOMbGaNOV9yrklmrHdUTfnf5pMkzEWOode5w3S4Ahoorc_cMVfUMJynsYmtVXl0YcfdudYknv1FHu3MLtP6Aei2Kl1A0MUQjyY2FZbkCtSh4nzEmIoq">
+<!-- Dramatic warm atmospheric overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-amber-950/60 to-stone-950/40"></div>
+<!-- Hero Content -->
+<div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center text-white py-16">
+<h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-3 drop-shadow-md">
+          Cerito Wong Dulu
+        </h1>
+<p class="font-serif italic text-xl sm:text-2xl text-amber-200 mb-4 drop-shadow font-medium">
+          Cerito Lame, Warisan Kite
+        </p>
+<p class="max-w-2xl mx-auto text-stone-200 text-base sm:text-lg mb-8 leading-relaxed font-light">
+          Menjelajahi cerita rakyat dan legenda yang diwariskan dari generasi ke generasi di Sumatera Selatan.
+        </p>
+<!-- CTA Buttons -->
+<div class="flex flex-wrap items-center justify-center gap-4">
+<a class="px-7 py-3 rounded-full bg-[#9A3412] hover:bg-[#781F00] text-white font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all flex items-center gap-2" href="#cerita-pilihan">
+<svg class="w-5 h-5 text-amber-200" fill="currentColor" viewBox="0 0 20 20">
+<path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"></path>
+</svg>
+<span class="">Mulai Bercerito</span>
+</a>
+<a class="px-7 py-3 rounded-full bg-white/15 hover:bg-white/25 text-white font-medium text-sm sm:text-base backdrop-blur-sm border border-white/30 transition-all flex items-center gap-2" href="#peta-cerito">
+<svg class="w-5 h-5 text-amber-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path>
+<circle cx="12" cy="9" r="2.5"></circle>
+</svg>
+<span class="">Jelajahi Peta</span>
+</a>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: CeritaPilihanSection -->
+<section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-purpose="curated-stories" id="cerita-pilihan">
+<!-- Section Header -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 pb-3 border-b border-stone-200">
+<div>
+<h2 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900">Cerito Pilihan</h2>
+<p class="text-stone-600 text-sm sm:text-base mt-1">Kisah-kisah yang layak kembali diceritakan.</p>
+</div>
+<a class="inline-flex items-center gap-1.5 text-amber-800 hover:text-amber-900 font-semibold text-sm mt-3 sm:mt-0 transition-colors group" href="#">
+<span class="">Lihat Semua</span>
+<span class="group-hover:translate-x-1 transition-transform">→</span>
+</a>
+</div>
+<!-- Story Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"><!-- Card 1: Putri Kembang Dadar -->
+<article class="bg-[#FDFBF7] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-[#E8DFD1] flex flex-col group">
+<div class="relative h-48 overflow-hidden">
+<img alt="Putri Kembang Dadar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4kaxm3_moDe0XcJlLgspomm3OWUjkcmSLBEM23_bU8Lz10xqdTlBTzeeBHVwLHL83ikLNc3zM4buLalHx86wjvF5RCQwQbvjEZXqBI3ZAd4M2D-yJjWiWZcZ4DeKzDe2eJmbxxsSJOMnjICnNqRP-W-igxlQtmUer0wTncOmr9Ru5eU2c6Vz8r00sKGaPH4abr6sLpbl3BF_FSDpE2lWOaj6pAUiah1VUgiMHGi64UfAfAEscZvbP">
+<span class="absolute top-3 left-3 bg-[#9A3412] text-amber-100 text-xs font-semibold px-2.5 py-1 rounded-md shadow-sm">
+              Legenda
+            </span>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between">
+<div>
+<h3 class="font-serif text-lg font-bold text-[#2D241E] group-hover:text-[#9A3412] transition-colors">
+                Putri Kembang Dadar
+              </h3>
+<div class="flex items-center gap-1 text-stone-500 text-xs mt-1.5">
+<svg class="w-3.5 h-3.5 text-[#9A3412]" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" fill-rule="evenodd"></path>
+</svg>
+<span class="">Palembang</span>
+</div>
+</div>
+<a class="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-[#9A3412] hover:text-[#781F00] pt-2 border-t border-[#E8DFD1]" href="#">
+<span class="">Baca Cerito</span>
+<span class="">→</span>
+</a>
+</div>
+</article>
+<!-- Card 2: Tanjung Sakti -->
+<article class="bg-[#FDFBF7] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-[#E8DFD1] flex flex-col group">
+<div class="relative h-48 overflow-hidden">
+<img alt="Megalit Tanjung Sakti Lahat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg02Fpsq5J1h-besynoe8YZpwlIBd3nC-qQ5cjDKnwNYlgSBiUdN6_D-GZewTuRNNjsb3lDwTvqjFjy0Pmn47yrSSqxmLQip1lVjkjF80XQxxm391NIpYzk_SJi-9v6g9GxirlW1xugMqcPr5EPJtsfR8MqqZAcgSJ4b8pUdL5ewwmvsfgPvC1lYol6Mx348NCGreWLmc9Htm7gKCaC9ESxJ3yzv0EOTILF26CkUkleeV6ERrsPRdH">
+<span class="absolute top-3 left-3 bg-[#466556] text-emerald-100 text-xs font-semibold px-2.5 py-1 rounded-md shadow-sm">
+              Asal Usul
+            </span>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between">
+<div>
+<h3 class="font-serif text-lg font-bold text-[#2D241E] group-hover:text-[#9A3412] transition-colors">
+                Tanjung Sakti
+              </h3>
+<div class="flex items-center gap-1 text-stone-500 text-xs mt-1.5">
+<svg class="w-3.5 h-3.5 text-[#9A3412]" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" fill-rule="evenodd"></path>
+</svg>
+<span class="">Lahat</span>
+</div>
+</div>
+<a class="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-[#9A3412] hover:text-[#781F00] pt-2 border-t border-[#E8DFD1]" href="#">
+<span class="">Baca Cerito</span>
+<span class="">→</span>
+</a>
+</div>
+</article>
+<!-- Card 3: Si Pahit Lidah -->
+<article class="bg-[#FDFBF7] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-[#E8DFD1] flex flex-col group">
+<div class="relative h-48 overflow-hidden">
+<img alt="Legenda Si Pahit Lidah" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsE7t01ZesVsRNkM8_P7z1F-ETDnu2kfr5ktCe342qWyG9W5XXoh_GYmc_7laDXvhD9peQz90sW7HtKTUHS6X7Bv-dcUI-Sx334uceslp8tBvp8uIuv-zBuq82mw1WCl58k8SvJKcvrTsAQeDUBasVOaQSeQ4Mn8ohhNsXoXVDltQ3iCTQyGDMjk8089TON0uMmWxX_zHf2p6yd-2QNF8sL4k4gDMZqy5Zc1riczntFb2dRFTrTSzA">
+<span class="absolute top-3 left-3 bg-[#9A3412] text-amber-100 text-xs font-semibold px-2.5 py-1 rounded-md shadow-sm">
+              Legenda
+            </span>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between">
+<div>
+<h3 class="font-serif text-lg font-bold text-[#2D241E] group-hover:text-[#9A3412] transition-colors">
+                Si Pahit Lidah
+              </h3>
+<div class="flex items-center gap-1 text-stone-500 text-xs mt-1.5">
+<svg class="w-3.5 h-3.5 text-[#9A3412]" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" fill-rule="evenodd"></path>
+</svg>
+<span class="">Pagar Alam</span>
+</div>
+</div>
+<a class="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-[#9A3412] hover:text-[#781F00] pt-2 border-t border-[#E8DFD1]" href="#">
+<span class="">Baca Cerito</span>
+<span class="">→</span>
+</a>
+</div>
+</article>
+<!-- Card 4: Kesultanan Palembang -->
+<article class="bg-[#FDFBF7] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-[#E8DFD1] flex flex-col group">
+<div class="relative h-48 overflow-hidden">
+<img alt="Kesultanan Palembang Rumah Limas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFoUip35zer0QVSHlR9WunsiRIpx47RhYuzN-wOusEuVxy4Qkby-M3fQgBdl7FBlmQolDjIi9cUoKYpjuIqhWT6-ALMmY-ghF2bkPBenmhH3gtslrXDRkKBo6p7KEHokC6fD8h4seatmjhnC5MlPzwVCZWVYa_FBl0zXSY47gccFkOcwawW3srWP7vJorp29I6avlIvdIK6A57VgfTdXykQjZjnjZtRnr_4Mjtz2nGBzslV8s2KBii">
+<span class="absolute top-3 left-3 bg-[#B45309] text-amber-100 text-xs font-semibold px-2.5 py-1 rounded-md shadow-sm">
+              Kerajaan
+            </span>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between">
+<div>
+<h3 class="font-serif text-lg font-bold text-[#2D241E] group-hover:text-[#9A3412] transition-colors">
+                Kesultanan Palembang
+              </h3>
+<div class="flex items-center gap-1 text-stone-500 text-xs mt-1.5">
+<svg class="w-3.5 h-3.5 text-[#9A3412]" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" fill-rule="evenodd"></path>
+</svg>
+<span class="">Palembang</span>
+</div>
+</div>
+<a class="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-[#9A3412] hover:text-[#781F00] pt-2 border-t border-[#E8DFD1]" href="#">
+<span class="">Baca Cerito</span>
+<span class="">→</span>
+</a>
+</div>
+</article></div>
+</section>
+<!-- END: CeritaPilihanSection -->
+<!-- BEGIN: JelajahiDaerahSection -->
+<section class="py-12 border-y border-[#E8DFD1] bg-[#FAF6EE]" data-purpose="region-filter-section">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-8">
+<h2 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900">Jelajahi Berdasarkan Daerah</h2>
+<p class="text-stone-600 text-sm sm:text-base mt-2">Temukan cerita dari berbagai daerah di Sumatera Selatan.</p>
+</div>
+<!-- Filter Chips List -->
+<div class="flex flex-wrap items-center justify-center gap-2.5 max-w-4xl mx-auto">
+<button class="px-5 py-2 rounded-full bg-[#9A3412] text-white font-medium text-xs sm:text-sm shadow-sm transition hover:bg-[#781F00]" type="button">
+            Palembang
+          </button>
+<button class="px-5 py-2 rounded-full bg-white hover:bg-amber-100/60 border border-stone-300 text-stone-700 font-medium text-xs sm:text-sm transition" type="button">
+            Lahat
+          </button>
+<button class="px-5 py-2 rounded-full bg-white hover:bg-amber-100/60 border border-stone-300 text-stone-700 font-medium text-xs sm:text-sm transition" type="button">
+            Ogan Ilir
+          </button>
+<button class="px-5 py-2 rounded-full bg-white hover:bg-amber-100/60 border border-stone-300 text-stone-700 font-medium text-xs sm:text-sm transition" type="button">
+            Muara Enim
+          </button>
+<button class="px-5 py-2 rounded-full bg-white hover:bg-amber-100/60 border border-stone-300 text-stone-700 font-medium text-xs sm:text-sm transition" type="button">
+            Pagar Alam
+          </button>
+<button class="px-5 py-2 rounded-full bg-white hover:bg-amber-100/60 border border-stone-300 text-stone-700 font-medium text-xs sm:text-sm transition" type="button">
+            OKU
+          </button>
+<button class="px-5 py-2 rounded-full bg-white hover:bg-amber-100/60 border border-stone-300 text-stone-700 font-medium text-xs sm:text-sm transition" type="button">
+            OKI
+          </button>
+<button class="px-5 py-2 rounded-full bg-white hover:bg-amber-100/60 border border-stone-300 text-stone-700 font-medium text-xs sm:text-sm transition" type="button">
+            Musi Banyuasin
+          </button>
+<button class="px-5 py-2 rounded-full bg-stone-200/80 hover:bg-stone-300 border border-stone-300 text-stone-800 font-medium text-xs sm:text-sm transition" type="button">
+            Lainnya ↓
+          </button>
+</div>
+</div>
+</section>
+<!-- END: JelajahiDaerahSection -->
+<!-- BEGIN: MapInteractiveSection -->
+<section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-purpose="interactive-map-promo" id="peta-cerito">
+<div class="bg-gradient-to-br from-[#1E2923] to-[#121A16] rounded-3xl p-6 sm:p-10 lg:p-12 text-white shadow-xl overflow-hidden relative border border-stone-700/50">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+<!-- Text and Action Column -->
+<div class="lg:col-span-4">
+<span class="inline-block text-amber-400 text-xs font-semibold tracking-wider uppercase mb-2">Peta Cerito Rakyat</span>
+<h2 class="font-serif text-3xl sm:text-4xl font-bold leading-tight mb-3">
+              Di Mana Cerita Ini Bermula?
+            </h2>
+<p class="text-stone-300 text-sm sm:text-base mb-6 leading-relaxed">
+              Jelajahi cerita berdasarkan daerah asalnya secara interaktif melalui peta persebaran budaya Sumatera Selatan.
+            </p>
+<a class="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#B45309] hover:bg-[#9A3412] text-amber-100 font-semibold text-sm shadow-md transition-all" href="#">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" fill-rule="evenodd"></path>
+</svg>
+<span class="">Jelajahi Peta Cerito</span>
+</a>
+</div>
+<!-- Visual Map Interface Representation -->
+<div class="lg:col-span-8">
+<div class="relative bg-emerald-950/70 border border-emerald-800/40 rounded-2xl p-6 min-h-[340px] flex flex-col justify-between overflow-hidden">
+<!-- Stylized South Sumatra Topography SVG -->
+<div class="absolute inset-0 opacity-40 pointer-events-none flex items-center justify-center">
+<svg class="w-full h-full fill-emerald-800 stroke-emerald-600 stroke-1" viewBox="0 0 700 380">
+<!-- Abstract representation of South Sumatra map boundary -->
+<path d="M120,60 Q180,30 290,40 T440,90 T560,110 T620,180 T540,290 T430,340 T270,320 T150,260 T80,180 Z" opacity="0.6"></path>
+<path d="M160,90 Q220,60 310,70 T430,120 T510,140 T570,200 T500,270 T390,300 T260,280 T170,230 Z" opacity="0.8"></path>
+</svg>
+</div>
+<!-- Map Pins / Hotspots -->
+<div class="relative z-10 w-full h-full min-h-[220px]">
+<!-- Pin: Palembang -->
+<div class="absolute top-[28%] left-[55%] -translate-x-1/2 flex items-center gap-2 bg-amber-900/90 text-amber-200 border border-amber-500/50 px-3 py-1 rounded-full text-xs shadow-lg backdrop-blur-sm cursor-pointer hover:scale-105 transition-transform">
+<span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+<span class="font-semibold">Palembang</span>
+</div>
+<!-- Pin: Lahat -->
+<div class="absolute top-[60%] left-[32%] -translate-x-1/2 flex items-center gap-2 bg-stone-900/90 text-emerald-200 border border-emerald-500/50 px-3 py-1 rounded-full text-xs shadow-lg backdrop-blur-sm cursor-pointer hover:scale-105 transition-transform">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+<span class="font-semibold">Lahat</span>
+</div>
+<!-- Pin: Pagar Alam -->
+<div class="absolute top-[75%] left-[24%] -translate-x-1/2 flex items-center gap-2 bg-stone-900/90 text-amber-200 border border-amber-500/50 px-3 py-1 rounded-full text-xs shadow-lg backdrop-blur-sm cursor-pointer hover:scale-105 transition-transform">
+<span class="w-2 h-2 rounded-full bg-amber-400"></span>
+<span class="font-semibold">Pagar Alam</span>
+</div>
+<!-- Pin: Musi Banyuasin -->
+<div class="absolute top-[18%] left-[38%] -translate-x-1/2 flex items-center gap-1.5 bg-stone-900/80 text-stone-200 px-2.5 py-0.5 rounded-full text-[11px] shadow">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-300"></span>
+<span class="">Musi Banyuasin</span>
+</div>
+<!-- Pin: OKI -->
+<div class="absolute top-[50%] left-[72%] -translate-x-1/2 flex items-center gap-1.5 bg-stone-900/80 text-stone-200 px-2.5 py-0.5 rounded-full text-[11px] shadow">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-300"></span>
+<span class="">OKI</span>
+</div>
+</div>
+<!-- Map Legend Bar -->
+<div class="relative z-10 pt-4 border-t border-emerald-800/60 flex flex-wrap items-center justify-between gap-3 text-xs text-stone-300">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+<span class="">Palembang</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-orange-500 inline-block"></span>
+<span class="">Museum</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+<span class="">Rumah Limas</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-sky-500 inline-block"></span>
+<span class="">Kuliner</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-yellow-400 inline-block"></span>
+<span class="">Situs Bersejarah</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-purple-400 inline-block"></span>
+<span class="">Destinasi</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: MapInteractiveSection -->
+<!-- BEGIN: TanyaCeritoSection -->
+<section class="py-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-purpose="ai-assistant-preview" id="tanya-cerito">
+<div class="bg-[#FAF1E3] border border-[#E8DFD1] rounded-3xl p-6 sm:p-8 shadow-md">
+<!-- Header with Mascot Icon -->
+<div class="flex items-start sm:items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-2xl bg-[#9A3412] text-amber-200 flex items-center justify-center flex-shrink-0 shadow-md">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div>
+<h2 class="font-serif text-2xl font-bold text-stone-900">Punya Pertanyaan Tentang Cerito?</h2>
+<p class="text-stone-600 text-sm mt-0.5">Tanyakan apa saja tentang cerita rakyat dan kebudayaan Sumatera Selatan.</p>
+</div>
+</div>
+<!-- Search / Question Input Bar -->
+<form class="relative flex flex-col sm:flex-row gap-2 sm:gap-0" onsubmit="event.preventDefault();">
+<input class="w-full pl-5 pr-4 py-3.5 bg-white border border-stone-300 rounded-2xl sm:rounded-r-none focus:outline-none focus:ring-2 focus:ring-amber-700 text-sm text-stone-800 placeholder-stone-400" placeholder="Tulis pertanyaanmu di sini... (misal: Pesan moral Putri Kembang Dadar)" type="text">
+<button class="px-7 py-3.5 bg-[#9A3412] hover:bg-[#781F00] text-white font-semibold text-sm rounded-2xl sm:rounded-l-none transition-colors flex items-center justify-center gap-2 whitespace-nowrap shadow-sm" type="submit">
+<span class="">Tanya Cerito</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</form>
+<!-- Suggested Question Prompts -->
+<div class="mt-4 pt-4 border-t border-amber-200/60">
+<span class="text-xs font-semibold text-stone-500 uppercase tracking-wider block mb-2">Contoh Pertanyaan Populer:</span>
+<div class="flex flex-wrap gap-2">
+<button class="text-xs bg-white hover:bg-amber-200/50 text-stone-700 border border-amber-300/70 px-3 py-1.5 rounded-full transition text-left" type="button">
+              "Cerita rakyat apa yang berasal dari Palembang?"
+            </button>
+<button class="text-xs bg-white hover:bg-amber-200/50 text-stone-700 border border-amber-300/70 px-3 py-1.5 rounded-full transition text-left" type="button">
+              "Apa pesan moral cerita Si Pahit Lidah?"
+            </button>
+<button class="text-xs bg-white hover:bg-amber-200/50 text-stone-700 border border-amber-300/70 px-3 py-1.5 rounded-full transition text-left" type="button">
+              "Cerita apa yang cocok untuk anak-anak?"
+            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TanyaCeritoSection -->
+<!-- BEGIN: CeritaTerpopulerSection -->
+<section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-purpose="popular-stories">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 pb-3 border-b border-stone-200">
+<div>
+<h2 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900">Cerito Terpopuler</h2>
+<p class="text-stone-600 text-sm sm:text-base mt-1">Yang paling sering dibaca oleh pembaca budiman.</p>
+</div>
+<a class="inline-flex items-center gap-1.5 text-amber-800 hover:text-amber-900 font-semibold text-sm mt-3 sm:mt-0 transition-colors group" href="#">
+<span class="">Lihat Semua</span>
+<span class="group-hover:translate-x-1 transition-transform">→</span>
+</a>
+</div>
+<!-- Ranked Popular Stories Cards (Horizontal Layouts) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"><!-- Rank 1 Card -->
+<article class="relative bg-[#FDFBF7] rounded-2xl p-3 border border-[#E8DFD1] shadow-sm hover:shadow-md transition-shadow flex items-center gap-3.5 group">
+<div class="relative w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+<img alt="Putri Kembang Dadar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6ulSEnCkAirt3jGNLoCJz0FoslF6SdpGjlv7L-QtQ6tsZCWLDACgR3_bQlIFtBl9cbx8u3SX7KlFomlrUuWRiwuhd5Sx0VuZ6FwRlIr1AsOq4grkHYbyB1nJc4YyLwoP0kGBHf3zYXeKTgAGM7J3LwRkOP3QVkUVaBA3wfXGkUWSEWELQKCF0cKlygEovwMR66ignIsrflC0n75gO66jbADtH6tE4wl_zIlYSnFViCxepAH6IUfSK">
+<span class="absolute top-1 left-1 w-6 h-6 rounded-md bg-[#9A3412] text-amber-100 font-serif font-bold text-xs flex items-center justify-center shadow">
+              1
+            </span>
+</div>
+<div class="flex-grow min-w-0">
+<h3 class="font-serif font-bold text-[#2D241E] text-sm sm:text-base truncate group-hover:text-[#9A3412] transition-colors">
+              Putri Kembang Dadar
+            </h3>
+<div class="flex items-center gap-1 text-stone-500 text-xs mt-1">
+<svg class="w-3 h-3 text-[#9A3412] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" fill-rule="evenodd"></path>
+</svg>
+<span class="truncate">Palembang</span>
+</div>
+<a class="text-xs text-[#9A3412] font-semibold inline-block mt-2" href="#">Baca detail →</a>
+</div>
+</article>
+<!-- Rank 2 Card -->
+<article class="relative bg-[#FDFBF7] rounded-2xl p-3 border border-[#E8DFD1] shadow-sm hover:shadow-md transition-shadow flex items-center gap-3.5 group">
+<div class="relative w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+<img alt="Tanjung Sakti" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNueGlQlun5S9UOrKvyguqUw2pFePCQVWzg2-rT6xeLfR8vL43xxvrDsSFn8zC7j0gNTJsb7PlIXSFECJPZ48q_A2qTee1R_o-JU11fmJb7lwdniGzVD6TeJGSC0JUf7-GZ93bnWI_pLAgTY8nYdzk5iDV9IaTQJDRa_Ebq7Z_l4llqOV79ZA4HSh4rjwH68xZHV8oFOD3Ygk5foS56lMhMZHvAHHSIO6kyvHJzD8gwAnX00VASs_w">
+<span class="absolute top-1 left-1 w-6 h-6 rounded-md bg-[#9A3412] text-amber-100 font-serif font-bold text-xs flex items-center justify-center shadow">
+              2
+            </span>
+</div>
+<div class="flex-grow min-w-0">
+<h3 class="font-serif font-bold text-[#2D241E] text-sm sm:text-base truncate group-hover:text-[#9A3412] transition-colors">
+              Tanjung Sakti
+            </h3>
+<div class="flex items-center gap-1 text-stone-500 text-xs mt-1">
+<svg class="w-3 h-3 text-[#9A3412] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" fill-rule="evenodd"></path>
+</svg>
+<span class="truncate">Lahat</span>
+</div>
+<a class="text-xs text-[#9A3412] font-semibold inline-block mt-2" href="#">Baca detail →</a>
+</div>
+</article>
+<!-- Rank 3 Card -->
+<article class="relative bg-[#FDFBF7] rounded-2xl p-3 border border-[#E8DFD1] shadow-sm hover:shadow-md transition-shadow flex items-center gap-3.5 group">
+<div class="relative w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+<img alt="Si Pahit Lidah" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvs0kyBcleHnTifQu5xRenuRa4b2_uvhlMMF7vfxmjZVv3B_5j0VUid-9B_xglYeYhdHpwP3FKaSRX9pCoA9B1Mi4UsMv2_KO8OqLo9NTcYMcIJ6Qh5GXOz5_DC1G1Qr3ciUu2FiIqEfSTKqPtmdfrcW9zvzdU4dHQ04_X9VbA3LJrMa4Xn2DQJvV7XkIhH0zNeWOx7R8Ed77qCsz2QODL5Z4JhhSgQGFes49e0Ecxst1TgMZlHx4R">
+<span class="absolute top-1 left-1 w-6 h-6 rounded-md bg-[#9A3412] text-amber-100 font-serif font-bold text-xs flex items-center justify-center shadow">
+              3
+            </span>
+</div>
+<div class="flex-grow min-w-0">
+<h3 class="font-serif font-bold text-[#2D241E] text-sm sm:text-base truncate group-hover:text-[#9A3412] transition-colors">
+              Si Pahit Lidah
+            </h3>
+<div class="flex items-center gap-1 text-stone-500 text-xs mt-1">
+<svg class="w-3 h-3 text-[#9A3412] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" fill-rule="evenodd"></path>
+</svg>
+<span class="truncate">Pagar Alam</span>
+</div>
+<a class="text-xs text-[#9A3412] font-semibold inline-block mt-2" href="#">Baca detail →</a>
+</div>
+</article>
+<!-- Rank 4 Card -->
+<article class="relative bg-[#FDFBF7] rounded-2xl p-3 border border-[#E8DFD1] shadow-sm hover:shadow-md transition-shadow flex items-center gap-3.5 group">
+<div class="relative w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+<img alt="Danau Ranau / Legenda Malin" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDePd24hXLkmVJSJPFFSiTWQYJro0fANdkL2X0xuSmHiQnyTwdVy_rFM9-YhCfhI-Qq0e1J7oZeUST3TvVhvoh8vZqTWCGJ9j68z9Q8WMcE-SFtzr_IHNzsyEZOtjSOhQxlka5HF4qc7WJDsdUEVpf2yjRapZz7mFMvoO0JH7U9D2qVDUSnbPn-615JZuSTOjPxJebtmgU6lxbfD4p4zJVpbXQQ7U7LcEVoPF3Np_mdTpqzva8jQWjH">
+<span class="absolute top-1 left-1 w-6 h-6 rounded-md bg-[#9A3412] text-amber-100 font-serif font-bold text-xs flex items-center justify-center shadow">
+              4
+            </span>
+</div>
+<div class="flex-grow min-w-0">
+<h3 class="font-serif font-bold text-[#2D241E] text-sm sm:text-base truncate group-hover:text-[#9A3412] transition-colors">
+              Danau Ranau
+            </h3>
+<div class="flex items-center gap-1 text-stone-500 text-xs mt-1">
+<svg class="w-3.5 h-3.5 text-[#9A3412] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" fill-rule="evenodd"></path>
+</svg>
+<span class="truncate">OKU Selatan</span>
+</div>
+<a class="text-xs text-[#9A3412] font-semibold inline-block mt-2" href="#">Baca detail →</a>
+</div>
+</article></div>
+</section>
+<!-- END: CeritaTerpopulerSection -->
+<!-- BEGIN: CallToActionBanner -->
+<section class="relative py-20 overflow-hidden" data-purpose="closing-cta">
+<!-- Background Image -->
+<img alt="Budaya Sumatera Selatan" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNUvjyzQAXfvanhPlHGCEfFnzqOCpHo1ezIPYLl1zUsVH9-qip09bXPlrkCWryDIGoB95jj2e9zwCmXEnqDfFkQBsaeCMqiRxg1kJy74rxPrZmx1_P9PIp7HnX5QXctbuHG4oDz7D2YDTyMDqnIOY1BNey5dRdETAvF3le0Umlu8ILcqeJ5gw2bdpzzmu9L2u1pWsh7hN09wqNx-VOApIH5yHih3TKqO_SW5N7s6i3eQszIpVw53oS">
+<!-- Warm Vignette Overlay -->
+<div class="absolute inset-0 bg-gradient-to-r from-stone-950/85 via-amber-950/75 to-stone-950/85"></div>
+<div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center text-white">
+<h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+          Setiap Cerito Punya Makna.<br>
+          Setiap Generasi Punya Cerito.
+        </h2>
+<p class="text-amber-100/90 text-base sm:text-lg mb-8 max-w-2xl mx-auto font-light">
+          Mari kenalkan kembali cerita rakyat Sumatera Selatan kepada generasi sekarang agar warisan leluhur tetap abadi.
+        </p>
+<a class="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-[#9A3412] hover:bg-[#781F00] text-white font-semibold text-base shadow-xl transition-all transform hover:-translate-y-0.5" href="#cerita-pilihan">
+<svg class="w-5 h-5 text-amber-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Jelajahi Cerito</span>
+</a>
+</div>
+</section>
+<!-- END: CallToActionBanner -->
+</main>
+<!-- BEGIN: SiteFooter -->
+<footer class="bg-stone-900 text-stone-300 pt-14 pb-8 border-t border-stone-800" data-purpose="site-footer">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Top Row: Logo, Navigation, Social Links -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-stone-800">
+<!-- Brand Identity -->
+<div class="flex items-center gap-3 text-left">
+<div class="w-10 h-10 rounded-full bg-amber-700 flex items-center justify-center text-amber-100 flex-shrink-0">
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 2L2 9L5 13L12 8L19 13L22 9L12 2Z"></path>
+<path d="M4 14V20C4 20.5523 4.44772 21 5 21H19C19.5523 21 20 20.5523 20 20V14L12 18.5L4 14Z" opacity="0.8"></path>
+</svg>
+</div>
+<div>
+<span class="font-serif font-bold text-lg text-white block">Cerito Wong Dulu</span>
+<span class="text-xs text-amber-400 font-medium">Cerito Lame, Warisan Kite</span>
+</div>
+</div>
+<!-- Navigation Links in Footer -->
+<nav class="flex flex-wrap items-center justify-center gap-6 text-sm text-stone-300">
+<a class="hover:text-amber-400 transition-colors" href="#">Beranda</a>
+<a class="hover:text-amber-400 transition-colors" href="#">Jelajahi Cerito</a>
+<a class="hover:text-amber-400 transition-colors" href="#">Peta Cerito</a>
+<a class="hover:text-amber-400 transition-colors" href="#">Tentang</a>
+<a class="hover:text-amber-400 transition-colors" href="#">Tanya Cerito</a>
+</nav>
+<!-- Social Media Icons -->
+<div class="flex items-center gap-4 text-stone-400">
+<!-- Facebook -->
+<a aria-label="Facebook Cerito Wong Dulu" class="p-2 rounded-full hover:bg-stone-800 hover:text-white transition" href="#">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+</a>
+<!-- Twitter / X -->
+<a aria-label="Twitter / X Cerito Wong Dulu" class="p-2 rounded-full hover:bg-stone-800 hover:text-white transition" href="#">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</a>
+<!-- Instagram -->
+<a aria-label="Instagram Cerito Wong Dulu" class="p-2 rounded-full hover:bg-stone-800 hover:text-white transition" href="#">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<!-- YouTube / Video -->
+<a aria-label="YouTube Cerito Wong Dulu" class="p-2 rounded-full hover:bg-stone-800 hover:text-white transition" href="#">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+</a>
+</div>
+</div>
+<!-- Copyright Notice -->
+<div class="pt-8 text-center text-xs text-stone-500">
+<p class="">© 2025 Cerito Wong Dulu. All rights reserved. Lestarikan Cerita Rakyat Sumatera Selatan.</p>
+</div>
+</div>
+</footer>
+<!-- END: SiteFooter -->
+
+
+
+
+</body></html>
