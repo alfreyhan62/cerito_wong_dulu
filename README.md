@@ -1,16 +1,21 @@
-# React + Vite
+# Cerito Wong Dulu
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## AI Cerito
 
-Currently, two official plugins are available:
+1. Salin `.env.example` menjadi `.env.local` lalu isi URL dan anon key proyek Supabase.
+2. Simpan Gemini API key hanya di Supabase:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+supabase secrets set GEMINI_API_KEY=your-gemini-api-key
+supabase functions deploy ai-chat
+```
 
-## React Compiler
+3. Opsional, pilih model server-side:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+supabase secrets set GEMINI_MODEL=gemini-2.0-flash
+```
 
-## Expanding the ESLint configuration
+Jangan gunakan `VITE_GEMINI_API_KEY`; variabel `VITE_*` dikirim ke browser.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Sebelum produksi, aktifkan autentikasi pengguna atau rate limiting untuk endpoint `ai-chat` agar kuota Gemini tidak disalahgunakan.

@@ -1,4 +1,72 @@
+import { useEffect, useMemo, useState } from 'react'
 import { MapPin } from 'lucide-react'
+import { CircleMarker, GeoJSON, MapContainer, Popup, TileLayer } from 'react-leaflet'
 import { Link } from 'react-router-dom'
-import { stories } from '../data/demoStories'
-export default function MapPage() { return <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8"><header className="mx-auto mb-6 max-w-3xl text-center"><span className="rounded-full border border-amber-300 bg-amber-100/70 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#9a3412]">Atlas Cerita Tradisional</span><h1 className="mt-3 font-serif text-3xl font-bold text-stone-900 sm:text-4xl">Peta Cerito Rakyat Sumatera Selatan</h1><p className="mt-2 text-sm text-stone-600">Jelajahi cerita berdasarkan daerah asalnya secara interaktif melalui peta persebaran budaya Bumi Sriwijaya.</p></header><div className="mb-6 flex gap-2 overflow-auto rounded-2xl border border-[#d5c7b5] bg-[#f5efe6] p-4">{['Semua', 'Legenda', 'Kerajaan', 'Asal-Usul', 'Misteri'].map((x, i) => <button key={x} className={`whitespace-nowrap rounded-full px-3.5 py-1.5 text-xs font-medium ${i === 0 ? 'bg-[#9a3412] text-white' : 'bg-stone-100 text-stone-600'}`}>{x}</button>)}</div><div className="flex min-h-[620px] flex-col overflow-hidden rounded-3xl border-4 border-[#27362e] bg-[#0b1c14] shadow-2xl xl:flex-row"><div className="map-pattern relative flex min-h-[480px] flex-1 items-center justify-center overflow-hidden p-4 sm:p-8"><svg className="h-full w-full max-h-[560px] drop-shadow-2xl" viewBox="0 0 950 620"><path d="M230,120 Q320,60 480,90 T720,110 T820,230 Q840,340 760,430 T560,560 T360,540 Q240,490 200,380 T170,220 Z" fill="#144335" stroke="#235c4b" strokeWidth="3" /><path d="M240,370 Q330,340 430,300 T570,240 T750,170" fill="none" stroke="#2563eb" strokeOpacity=".4" strokeWidth="4" />{[['Musi Banyuasin',420,160,'#10b981'],['Palembang',620,210,'#f59e0b'],['OKI',710,290,'#a855f7'],['Lahat',400,370,'#f97316'],['Pagar Alam',320,420,'#eab308'],['Muara Enim',480,360,'#06b6d4']].map(([name,x,y,color]) => <g key={name} transform={`translate(${x},${y})`}><circle r="8" fill={color} stroke="white" strokeWidth="3" /><text x="14" y="5" fill="white" fontSize="13" fontWeight="600">{name}</text></g>)}</svg><div className="absolute bottom-5 left-5 rounded-2xl border border-[#d5c7b5] bg-[#f5efe6]/95 p-3 text-xs text-stone-900"><b className="mb-2 block">Kategori Legenda</b><div className="grid grid-cols-2 gap-2"><span>● Palembang</span><span>● Museum</span><span>● Rumah Limas</span><span>● Situs Sejarah</span></div></div></div><aside className="w-full bg-[#f5efe6] p-6 xl:w-96"><span className="text-xs font-bold uppercase tracking-wider text-[#8b2e0f]">Wilayah Aktif</span><h2 className="font-serif text-xl font-bold">Kota Palembang</h2><img src={stories[0].image} alt="Putri Kembang Dadar" className="mt-5 h-44 w-full rounded-xl object-cover" /><h3 className="mt-3 font-serif text-lg font-bold">Putri Kembang Dadar</h3><p className="mt-1 text-xs leading-relaxed text-stone-600">Kisah demo untuk preview wilayah terpilih.</p><Link to={`/cerito/${stories[0].id}`} className="mt-5 flex items-center justify-center gap-2 rounded-xl bg-[#8b2e0f] py-3 text-sm font-semibold text-white">Buka Cerita Lengkap <MapPin size={15} /></Link></aside></div></main> }
+import { categories, stories } from '../data/demoStories'
+
+const markerPositions = {
+  Palembang: [-2.99, 104.76, '#f59e0b'],
+  Lahat: [-3.78, 103.54, '#f97316'],
+  'Pagar Alam': [-4.02, 103.25, '#eab308'],
+}
+
+export default function MapPage() {
+  const [category, setCategory] = useState('Semua')
+  const [region, setRegion] = useState(stories[0].region)
+  const [southSumatra, setSouthSumatra] = useState(null)
+  useEffect(() => {
+    fetch('/sumatera-selatan.json')
+      .then((response) => response.json())
+      .then(([place]) => setSouthSumatra(place.geojson))
+  }, [])
+  const filteredStories = useMemo(
+    () => stories.filter((story) => (category === 'Semua' || story.category === category) && markerPositions[story.region]),
+    [category],
+  )
+  const activeStories = filteredStories.filter((story) => story.region === region)
+  const displayedStories = activeStories.length ? activeStories : filteredStories
+  const visibleRegions = [...new Set(filteredStories.map((story) => story.region))]
+  const outsideSouthSumatra = useMemo(() => southSumatra && ({ type: 'Polygon', coordinates: [[[-180, -90], [180, -90], [180, 90], [-180, 90], [-180, -90]], ...southSumatra.coordinates] }), [southSumatra])
+
+  return <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <header className="mx-auto mb-6 max-w-3xl text-center">
+      <span className="rounded-full border border-amber-300 bg-amber-100/70 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#9a3412]">Atlas Cerita Tradisional</span>
+      <h1 className="mt-3 font-serif text-3xl font-bold text-stone-900 sm:text-4xl">Peta Cerito Rakyat Sumatera Selatan</h1>
+      <p className="mt-2 text-sm text-stone-600">Jelajahi cerita berdasarkan daerah asalnya secara interaktif melalui peta persebaran budaya Bumi Sriwijaya.</p>
+    </header>
+    <div className="mb-6 flex snap-x gap-2 overflow-x-auto scroll-px-4 rounded-2xl border border-[#d5c7b5] bg-[#f5efe6] p-4">
+      {['Semua', ...categories].map((item) => <button key={item} type="button" onClick={() => setCategory(item)} className={`glass-action min-h-11 snap-start whitespace-nowrap rounded-full px-3.5 py-1.5 text-xs font-medium ${category === item ? 'glass-action-active' : 'text-stone-600'}`}>{item}</button>)}
+    </div>
+    <div className="overflow-hidden rounded-3xl border-4 border-[#27362e] bg-[#0b1c14] shadow-2xl">
+      <div className="map-pattern h-[360px] sm:h-[560px]">
+        <MapContainer center={[-3.4, 104.3]} zoom={8} scrollWheelZoom={false} className="map-south-sumatra h-full w-full">
+          <TileLayer attribution="&copy; OpenStreetMap contributors" url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          {outsideSouthSumatra && <GeoJSON data={outsideSouthSumatra} style={{ color: '#235c4b', fillColor: '#6b7280', fillOpacity: 0.82, weight: 3 }} interactive={false} />}
+          {visibleRegions.map((name) => {
+            const [latitude, longitude, color] = markerPositions[name]
+            return <CircleMarker key={name} center={[latitude, longitude]} radius={region === name ? 11 : 8} pathOptions={{ color: 'white', fillColor: color, fillOpacity: 1, weight: region === name ? 4 : 2 }} eventHandlers={{ click: () => setRegion(name) }}>
+              <Popup>{name}</Popup>
+            </CircleMarker>
+          })}
+        </MapContainer>
+      </div>
+      <aside className="border-t-4 border-[#27362e] bg-[#f5efe6] p-6">
+        {displayedStories.length ? <>
+          <span className="text-xs font-bold uppercase tracking-wider text-[#8b2e0f]">Wilayah Aktif</span>
+          <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+            <h2 className="mt-1 font-serif text-2xl font-bold text-stone-900">{displayedStories[0].region}</h2>
+            <p className="text-sm text-stone-600">{displayedStories.length} cerita tersedia</p>
+          </div>
+          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {displayedStories.map((story) => <article key={story.id} className="rounded-2xl border border-[#d5c7b5] bg-white p-3">
+              <img className="h-40 w-full rounded-xl object-cover" src={story.image} alt={story.title} />
+              <h3 className="mt-3 font-serif text-lg font-bold text-stone-900">{story.title}</h3>
+              <p className="mt-1 text-xs text-stone-600">{story.category}</p>
+              <Link className="glass-action glass-action-primary mt-3 rounded-xl px-4 py-2 text-sm font-bold" to={`/cerito/${story.id}`}>Buka Cerita <MapPin size={15} /></Link>
+            </article>)}
+          </div>
+        </> : <p className="text-sm text-stone-600">Belum ada cerita untuk kategori ini.</p>}
+      </aside>
+    </div>
+  </main>
+}
