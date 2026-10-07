@@ -30,6 +30,16 @@ create table public.stories (
   updated_at timestamptz not null default now()
 );
 
+create table public.story_submissions (
+  id uuid primary key default gen_random_uuid(),
+  narrator_name text not null check (char_length(narrator_name) between 1 and 120),
+  region_text text not null check (char_length(region_text) between 1 and 120),
+  title text not null check (char_length(title) between 1 and 200),
+  content text not null check (char_length(content) between 1 and 12000),
+  status text not null default 'pending' check (status = 'pending'),
+  created_at timestamptz not null default now()
+);
+
 create table public.characters (
   id bigint generated always as identity primary key,
   story_id uuid not null references public.stories(id) on delete cascade,
@@ -60,6 +70,7 @@ create table public.profiles (
 );
 
 alter table public.stories enable row level security;
+alter table public.story_submissions enable row level security;
 alter table public.categories enable row level security;
 alter table public.regions enable row level security;
 alter table public.characters enable row level security;
@@ -68,6 +79,7 @@ alter table public.story_locations enable row level security;
 alter table public.profiles enable row level security;
 
 create policy "public reads published stories" on public.stories for select using (status = 'published');
+create policy "public submits stories" on public.story_submissions for insert to anon with check (status = 'pending');
 create policy "public reads categories" on public.categories for select using (true);
 create policy "public reads regions" on public.regions for select using (true);
 create policy "public reads characters" on public.characters for select using (true);
