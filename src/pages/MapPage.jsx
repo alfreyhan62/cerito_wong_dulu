@@ -30,7 +30,6 @@ export default function MapPage() {
 
   return <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
     <header className="mx-auto mb-6 max-w-3xl text-center">
-      <span className="rounded-full border border-amber-300 bg-amber-100/70 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#9a3412]">Atlas Cerita Tradisional</span>
       <h1 className="mt-3 font-serif text-3xl font-bold text-stone-900 sm:text-4xl">Peta Cerito Rakyat Sumatera Selatan</h1>
       <p className="mt-2 text-sm text-stone-600">Jelajahi cerita berdasarkan daerah asalnya secara interaktif melalui peta persebaran budaya Bumi Sriwijaya.</p>
     </header>
