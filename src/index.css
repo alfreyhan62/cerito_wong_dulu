@@ -32,6 +32,7 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; background: #f5efe4; color: #2d241e; font-family: var(--font-sans); }
 * { box-sizing: border-box; }
+@media (max-width: 639px) { body { overflow-x: hidden; } }
 .map-pattern { background-color: #1a3026; background-image: radial-gradient(#2e5140 1.5px, transparent 1.5px), radial-gradient(#2e5140 1.5px, #1a3026 1.5px); background-size: 30px 30px; background-position: 0 0, 15px 15px; }
 .map-tiles-muted { filter: grayscale(1) brightness(1.08); }
 .map-south-sumatra { background: #1a3026; }

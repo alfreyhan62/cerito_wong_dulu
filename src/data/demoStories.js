@@ -1,14 +1,14 @@
 export const stories = [
-  { id: 'putri-kembang-dadar', title: 'Putri Kembang Dadar', category: 'Legenda', region: 'Palembang', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB4kaxm3_moDe0XcJlLgspomm3OWUjkcmSLBEM23_bU8Lz10xqdTlBTzeeBHVwLHL83ikLNc3zM4buLalHx86wjvF5RCQwQbvjEZXqBI3ZAd4M2D-yJjWiWZcZ4DeKzDe2eJmbxxsSJOMnjICnNqRP-W-igxlQtmUer0wTncOmr9Ru5eU2c6Vz8r00sKGaPH4abr6sLpbl3BF_FSDpE2lWOaj6pAUiah1VUgiMHGi64UfAfAEscZvbP' },
-  { id: 'tanjung-sakti', title: 'Tanjung Sakti', category: 'Asal Usul', region: 'Lahat', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBg02Fpsq5J1h-besynoe8YZpwlIBd3nC-qQ5cjDKnwNYlgSBiUdN6_D-GZewTuRNNjsb3lDwTvqjFjy0Pmn47yrSSqxmLQip1lVjkjF80XQxxm391NIpYzk_SJi-9v6g9GxirlW1xugMqcPr5EPJtsfR8MqqZAcgSJ4b8pUdL5ewwmvsfgPvC1lYol6Mx348NCGreWLmc9Htm7gKCaC9ESxJ3yzv0EOTILF26CkUkleeV6ERrsPRdH' },
-  { id: 'si-pahit-lidah', title: 'Si Pahit Lidah', category: 'Legenda', region: 'Pagar Alam', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBsE7t01ZesVsRNkM8_P7z1F-ETDnu2kfr5ktCe342qWyG9W5XXoh_GYmc_7laDXvhD9peQz90sW7HtKTUHS6X7Bv-dcUI-Sx334uceslp8tBvp8uIuv-zBuq82mw1WCl58k8SvJKcvrTsAQeDUBasVOaQSeQ4Mn8ohhNsXoXVDltQ3iCTQyGDMjk8089TON0uMmWxX_zHf2p6yd-2QNF8sL4k4gDMZqy5Zc1riczntFb2dRFTrTSzA' },
-  { id: 'kesultanan-palembang', title: 'Kesultanan Palembang', category: 'Kerajaan', region: 'Palembang', image: 'https://upload.wikimedia.org/wikipedia/commons/8/81/Lambang_Kesultanan_Palembang_Darusalam.jpg' },
-  { id: 'pulau-kemaro', title: 'Legenda Pulau Kemaro', category: 'Legenda', region: 'Palembang', image: 'https://upload.wikimedia.org/wikipedia/commons/0/03/Pagoda_Pulau_Kemaro.jpg' },
-  { id: 'putri-dayang-merindu', title: 'Putri Dayang Merindu', category: 'Legenda', region: 'Palembang', image: 'https://upload.wikimedia.org/wikipedia/commons/1/19/Pagoda_pulo_kemaro.png' },
-  { id: 'ki-gede-ing-suro', title: 'Ki Gede Ing Suro', category: 'Kerajaan', region: 'Palembang', image: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/Mengenal-ki-gede-ing-suro-pendiri-kerajaan-islam-di-bumi-wong-kito-galo-v9dbnZpoWc.jpg' },
-  { id: 'sungai-musi', title: 'Asal Usul Sungai Musi', category: 'Asal Usul', region: 'Palembang', image: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Perahu_Membela_Sungai_Musi_Palembang.jpg' },
-  { id: 'rumah-limas', title: 'Rahasia Rumah Limas', category: 'Misteri', region: 'Palembang', image: 'https://upload.wikimedia.org/wikipedia/commons/1/12/Rumah_Limas_Museum_Balaputradewa.jpg' },
-  { id: 'jembatan-ampera', title: 'Jembatan Ampera', category: 'Kearifan Lokal', region: 'Palembang', image: 'https://upload.wikimedia.org/wikipedia/commons/6/6d/Jembatan_Ampera_di_Waktu_Subuh-1.jpg' },
+  { id: 'putri-kembang-dadar', title: 'Putri Kembang Dadar', category: 'Legenda', region: 'Palembang', image: new URL('../assets/stories/putri-kembang-dadar.webp', import.meta.url).href },
+  { id: 'tanjung-sakti', title: 'Tanjung Sakti', category: 'Asal Usul', region: 'Lahat', image: new URL('../assets/stories/tanjung-sakti.webp', import.meta.url).href },
+  { id: 'si-pahit-lidah', title: 'Si Pahit Lidah', category: 'Legenda', region: 'Pagar Alam', image: new URL('../assets/stories/si-pahit-lidah.webp', import.meta.url).href },
+  { id: 'kesultanan-palembang', title: 'Kesultanan Palembang', category: 'Kerajaan', region: 'Palembang', image: new URL('../assets/stories/kesultanan-palembang.webp', import.meta.url).href },
+  { id: 'pulau-kemaro', title: 'Legenda Pulau Kemaro', category: 'Legenda', region: 'Palembang', image: new URL('../assets/stories/pulau-kemaro.webp', import.meta.url).href },
+  { id: 'putri-dayang-merindu', title: 'Putri Dayang Merindu', category: 'Legenda', region: 'Palembang', image: new URL('../assets/stories/putri-dayang-merindu.webp', import.meta.url).href },
+  { id: 'ki-gede-ing-suro', title: 'Ki Gede Ing Suro', category: 'Kerajaan', region: 'Palembang', image: new URL('../assets/stories/ki-gede-ing-suro.webp', import.meta.url).href },
+  { id: 'sungai-musi', title: 'Asal Usul Sungai Musi', category: 'Asal Usul', region: 'Palembang', image: new URL('../assets/stories/sungai-musi.webp', import.meta.url).href },
+  { id: 'rumah-limas', title: 'Rahasia Rumah Limas', category: 'Misteri', region: 'Palembang', image: new URL('../assets/stories/rumah-limas.webp', import.meta.url).href },
+  { id: 'jembatan-ampera', title: 'Jembatan Ampera', category: 'Kearifan Lokal', region: 'Palembang', image: new URL('../assets/stories/jembatan-ampera.webp', import.meta.url).href },
 ]
 
 export const storyContent = {
