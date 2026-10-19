@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { MapPin } from 'lucide-react'
 import { CircleMarker, GeoJSON, MapContainer, Popup, TileLayer } from 'react-leaflet'
 import { Link } from 'react-router-dom'
-import { categories, stories } from '../data/demoStories'
+import { regions, stories } from '../data/demoStories'
 
 const markerPositions = {
   Palembang: [-2.99, 104.76, '#f59e0b'],
@@ -23,7 +23,6 @@ const markerPositions = {
 }
 
 export default function MapPage() {
-  const [category, setCategory] = useState('Semua')
   const [region, setRegion] = useState(stories[0].region)
   const [southSumatra, setSouthSumatra] = useState(null)
   useEffect(() => {
@@ -31,10 +30,7 @@ export default function MapPage() {
       .then((response) => response.json())
       .then(([place]) => setSouthSumatra(place.geojson))
   }, [])
-  const filteredStories = useMemo(
-    () => stories.filter((story) => (category === 'Semua' || story.category === category) && markerPositions[story.region]),
-    [category],
-  )
+  const filteredStories = useMemo(() => stories.filter((story) => markerPositions[story.region]), [])
   const activeStories = filteredStories.filter((story) => story.region === region)
   const displayedStories = activeStories.length ? activeStories : filteredStories
   const visibleRegions = [...new Set(filteredStories.map((story) => story.region))]
@@ -45,8 +41,8 @@ export default function MapPage() {
       <h1 className="mt-3 font-serif text-3xl font-bold text-stone-900 sm:text-4xl">Peta Cerito Rakyat Sumatera Selatan</h1>
       <p className="mt-2 text-sm text-[#6b3f20]">Jelajahi cerita berdasarkan daerah asalnya secara interaktif melalui peta persebaran budaya Bumi Sriwijaya.</p>
     </header>
-    <div className="mb-6 flex snap-x gap-2 overflow-x-auto scroll-px-4 rounded-2xl border border-[#d5c7b5] bg-[#f5efe6] p-4">
-      {['Semua', ...categories.filter((item) => item !== 'Petualangan')].map((item) => <button key={item} type="button" onClick={() => setCategory(item)} className={`glass-action min-h-11 snap-start whitespace-nowrap rounded-full px-3.5 py-1.5 text-xs font-medium ${category === item ? 'glass-action-active' : 'text-stone-600'}`}>{item}</button>)}
+    <div className="mb-6 flex flex-wrap justify-center gap-3 rounded-2xl border border-[#c9a66b] bg-[#f3e8d5] p-4">
+      {regions.map((item) => <button key={item} type="button" onClick={() => setRegion(item)} className={`min-h-10 rounded-full border px-4 py-2 text-sm font-medium transition-colors ${region === item ? 'border-[#a93b16] bg-[#a93b16] text-amber-50 shadow-[inset_0_-2px_0_rgb(251_191_36_/_0.4)]' : 'border-[#b89055] bg-[#fbf3e5] text-[#4b3420] hover:bg-[#ead5b5]'}`}>{item}</button>)}
     </div>
     <div className="overflow-hidden rounded-3xl border-4 border-[#27362e] bg-[#0b1c14] shadow-2xl">
       <div className="map-pattern h-[360px] sm:h-[560px]">
@@ -69,7 +65,7 @@ export default function MapPage() {
             <p className="text-sm text-stone-600">{displayedStories.length} cerita tersedia</p>
           </div>
           <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {displayedStories.map((story) => <article key={story.id} className="rounded-2xl border border-[#d5c7b5] bg-white p-3">
+            {displayedStories.map((story) => <article key={story.id} className="rounded-2xl border border-[#d5c7b5] bg-[#f3e8d5] p-3">
               <img className="h-40 w-full rounded-xl object-cover" src={story.image} alt={story.title} />
               <h3 className="mt-3 font-serif text-lg font-bold text-stone-900">{story.title}</h3>
               <p className="mt-1 text-xs text-stone-600">{story.category}</p>
