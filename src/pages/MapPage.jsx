@@ -70,7 +70,7 @@ export default function MapPage() {
               <h3 className="mt-3 font-serif text-lg font-bold text-stone-900">{story.title}</h3>
               <p className="mt-1 text-xs text-stone-600">{story.category}</p>
               <p className="mt-1 flex items-center gap-1 text-xs text-stone-500"><MapPin size={14} className="text-[#9a3412]" />{story.region}</p>
-              <Link className="glass-action glass-action-primary mt-3 rounded-xl px-4 py-2 text-sm font-bold" to={`/cerito/${story.id}`}>Buka Cerita <MapPin size={15} /></Link>
+              <Link className="glass-action glass-action-primary mt-3 rounded-xl px-4 py-2 text-sm font-bold" to={`/jelajahi/${story.id}`}>Buka Cerita <MapPin size={15} /></Link>
             </article>)}
           </div>
         </> : <p className="text-sm text-stone-600">Belum ada cerita untuk kategori ini.</p>}
