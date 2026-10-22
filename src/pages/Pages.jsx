@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { BookOpen, Download } from 'lucide-react'
+import { BookOpen } from 'lucide-react'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import { Link, useParams, useSearchParams } from 'react-router-dom'
 import { StoryGrid } from '../components/StoryCard'
@@ -19,7 +19,7 @@ export function StoryDetail() {
 
   return <main className="min-h-screen bg-[#ece2cf] pb-16 text-[#28221d]">
     <div className="mx-auto grid max-w-7xl gap-8 px-4 py-8 sm:px-6 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-start lg:px-8 lg:py-12">
-      <article className="overflow-hidden rounded-2xl bg-[#fffaf0] shadow-[0_18px_45px_rgb(78_51_24_/_0.14)]">
+      <article className="overflow-hidden rounded-2xl bg-[#f3e8d5] shadow-[0_18px_45px_rgb(78_51_24_/_0.14)]">
         <header className="relative min-h-[23rem] overflow-hidden bg-[#3c281b] sm:min-h-[30rem]">
           <img src={story.image} alt="" className="absolute inset-0 h-full w-full object-cover opacity-70" />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgb(33_23_16_/_0.12),rgb(33_23_16_/_0.86))]" />
@@ -48,11 +48,11 @@ export function StoryDetail() {
 
       <aside className="lg:sticky lg:top-24">
         <div className="rounded-2xl bg-[#2b493a] p-6 text-[#f8efde] shadow-[0_16px_35px_rgb(42_58_40_/_0.18)]">
-          <p className="font-sans text-xs font-semibold tracking-[0.14em] text-[#e5c783]">BACA OFFLINE</p>
-          <h2 className="mt-3 text-2xl text-white">Simpan cerita ini</h2>
-          <p className="mt-3 font-reading leading-7 text-[#e5ddc9]">Unduhan PDF akan tersedia pada pembaruan berikutnya.</p>
-          <button type="button" disabled aria-describedby="download-note" className="mt-6 flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-xl bg-[#d7ae58] px-4 py-3 font-semibold text-[#463319] opacity-60"><Download size={18} aria-hidden="true" />Download PDF</button>
-          <p id="download-note" className="mt-3 text-xs leading-5 text-[#d7c9af]">Tombol ditampilkan lebih dulu. File PDF belum tersedia.</p>
+          <p className="font-sans text-xs font-semibold tracking-[0.14em] text-[#e5c783]">BACA CERITO</p>
+          <h2 className="mt-3 text-2xl text-white">Baca cerita ini</h2>
+          <p className="mt-3 font-reading leading-7 text-[#e5ddc9]">Nikmati cerito rakyat ini langsung di halaman baca.</p>
+          <a href={story.readUrl} target="_blank" rel="noreferrer" className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-[#d7ae58] px-4 py-3 font-semibold text-[#463319]"><BookOpen size={18} aria-hidden="true" />Baca Cerito</a>
+          <p className="mt-3 text-xs leading-5 text-[#d7c9af]">Halaman baca dibuka di tab baru.</p>
         </div>
         <div className="mt-5 border border-[#d8c9af] bg-[#f7f0e3] p-5">
           <p className="text-xs font-semibold tracking-[0.13em] text-[#8b6546]">ASAL CERITA</p>
