@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ArrowRight, Bot, Send } from 'lucide-react'
 
-const prompts = ['Cerita rakyat apa yang berasal dari Palembang?', 'Apa pesan moral cerita Si Pahit Lidah?', 'Cerita apa yang cocok untuk anak-anak?', 'Siapa tokoh utama dalam cerita ini?']
+const prompts = ['Apa makna budaya Rumah Limas?', 'Ceritakan Si Pahit Lidah.', 'Apa makna legenda Pulau Kemaro?', 'Bagaimana sejarah Jembatan Ampera?']
 import { aiChat } from '../services/aiChat'
 
 function formatMessage(content) {
@@ -29,7 +29,7 @@ export default function AIChat() {
 
     try {
       const response = await aiChat(conversation)
-      setMessages((current) => [...current, { role: 'assistant', content: response }])
+      setMessages((current) => [...current, { role: 'assistant', ...response }])
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : 'Terjadi kesalahan. Coba lagi.')
     } finally {

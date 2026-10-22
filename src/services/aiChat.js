@@ -22,8 +22,8 @@ export async function aiChat(messages) {
 
   const question = messages.filter((message) => message.role === 'user').at(-1)?.content || ''
   const references = retrieveStories(question)
-  const { data, error } = await supabase.functions.invoke('ai-chat', { body: { messages, references } })
+  const { data, error } = await supabase.functions.invoke('ai-chat', { body: { messages: messages.slice(-6), references } })
   if (error) throw new Error('Layanan AI sedang tidak tersedia. Coba lagi nanti.')
   if (!data?.message || typeof data.message !== 'string') throw new Error('Respons AI tidak valid.')
-  return data.message
+  return { content: data.message, sources: Array.isArray(data.sources) ? data.sources : [] }
 }
